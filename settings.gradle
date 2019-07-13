@@ -1,0 +1,19 @@
+// pluginManagement {
+// 	resolutionStrategy {
+// 		eachPlugin {
+// 			if (requested.id.id == 'net.serenity-bdd.aggregator') {
+// 				useModule('net.serenity-bdd:serenity-gradle-plugin:2.0.58')
+// 			}
+// 		}
+// 	}
+// 	repositories {
+// 		mavenCentral()
+// 		jcenter() 
+// 		gradlePluginPortal()
+// 	}
+// }
+
+rootProject.name = 'BDD-Stack'
+
+include 'BDD-Stack-Core'
+include 'BDD-Stack-Selenium'

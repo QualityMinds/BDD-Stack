@@ -1,0 +1,32 @@
+plugins {
+    id 'java-library'
+}
+
+ext {
+    seleniumVersion = "3.141.59"
+}
+
+dependencies {
+	api project(':BDD-Stack-Core')
+    //Galen
+    api('com.galenframework:galen-java-support:2.4.3')
+    //{
+    //	exclude group: 'org.seleniumhq.selenium'
+    //}
+    
+    //Selenide
+    api('com.codeborne:selenide:5.2.0')
+    
+    api('com.imalittletester:thewaiter:1.0')
+    
+    //Selenium
+	api("org.seleniumhq.selenium:selenium-firefox-driver:${seleniumVersion}")
+	api("org.seleniumhq.selenium:selenium-chrome-driver:${seleniumVersion}")
+	api("org.seleniumhq.selenium:selenium-edge-driver:${seleniumVersion}")
+	api("org.seleniumhq.selenium:selenium-safari-driver:${seleniumVersion}")
+	api("org.seleniumhq.selenium:selenium-remote-driver:${seleniumVersion}")
+	
+	//Webdrivermanager
+	api('io.github.bonigarcia:webdrivermanager:3.6.1')
+
+}
