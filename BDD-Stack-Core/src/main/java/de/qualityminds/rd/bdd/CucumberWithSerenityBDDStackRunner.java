@@ -14,10 +14,16 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 public class CucumberWithSerenityBDDStackRunner 
 extends CucumberWithSerenity {
 		
-	public CucumberWithSerenityBDDStackRunner(Class clazz) throws InitializationError, IOException {
+	public CucumberWithSerenityBDDStackRunner(Class<?> clazz) throws InitializationError, IOException {
 		super(clazz);
+		initRunners();
+	}
+
+	protected void initRunners() {
+		@SuppressWarnings("resource")
 		ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-		Map<String, RunnerInit> test = context.getBeansOfType(RunnerInit.class);
+		Map<String, RunnerInit> runners = context.getBeansOfType(RunnerInit.class);
+		runners.values().forEach(r -> r.init());
 	}
 	
 }

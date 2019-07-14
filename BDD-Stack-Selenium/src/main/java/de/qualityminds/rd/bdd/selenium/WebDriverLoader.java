@@ -1,7 +1,5 @@
 package de.qualityminds.rd.bdd.selenium;
 
-import javax.annotation.PostConstruct;
-
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -12,8 +10,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 @Scope(scopeName = "singleton")
 public class WebDriverLoader implements RunnerInit{
 	
-	@PostConstruct
-	public void postConstruct() {
+	@Override
+	public void init() {
 		setupWebDriver();
 	}
 		
