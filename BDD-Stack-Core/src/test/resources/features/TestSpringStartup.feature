@@ -6,3 +6,7 @@ Feature: test cucumber
   Scenario: test injection works
   Then step executes
 	And injection works
+	
+	Scenario: property injection works
+	Then step executes
+	And test property is correctly read

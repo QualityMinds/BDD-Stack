@@ -7,12 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import cucumber.api.java.en.Then;
 import de.qualityminds.rd.bdd.Steps;
-import de.qualityminds.rd.bdd.spring.SpringTestComponent;
+import de.qualityminds.rd.bdd.config.TestProperties;
 
 public class CucumberTestSteps extends Steps{
-	
-	@Autowired
-	SpringTestComponent test;
+	@Autowired 
+	TestProperties properties;
 	
 	@Then("step executes")
 	public void stepExecutes() {
@@ -21,7 +20,13 @@ public class CucumberTestSteps extends Steps{
 	
 	@Then("injection works")
 	public void injectionWorks() {
-		assertNotNull(test);
+		assertNotNull(properties);
 		System.out.println("Injection works");
+	}
+	
+	@Then("test property is correctly read")
+	public void testPropertyIsCorrectlyRead() {
+		assertNotNull(properties.getTestProperty());
+		System.out.println("Test Property from config : " + properties.getTestProperty());
 	}
 }

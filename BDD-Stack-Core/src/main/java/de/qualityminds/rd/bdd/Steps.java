@@ -1,10 +1,9 @@
 package de.qualityminds.rd.bdd;
 
-import org.springframework.test.context.ContextConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import de.qualityminds.rd.bdd.spring.SpringConfig;
 
-@ContextConfiguration(classes = SpringConfig.class)	
+@SpringBootTest(classes = SpringConfig.class)	
 public class Steps {
-
 }
