@@ -5,5 +5,5 @@ import org.springframework.boot.test.context.SpringBootTest;
 import de.qualityminds.rd.bdd.spring.SpringConfig;
 
 @SpringBootTest(classes = SpringConfig.class)	
-public class Steps {
+public abstract class Steps {
 }

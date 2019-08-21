@@ -12,10 +12,7 @@ import de.qualityminds.rd.bdd.spring.SpringConfig;
 import net.serenitybdd.junit.spring.integration.SpringIntegrationMethodRule;
 
 @SpringBootTest(classes = SpringConfig.class)	
-public class TestJunit {
-	@Rule
-	public SpringIntegrationMethodRule springIntegrationMethodRule = new SpringIntegrationMethodRule();
-	
+public class TestJunit {	
 	@Autowired
 	TestProperties properties;
 	
